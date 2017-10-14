@@ -1,10 +1,6 @@
-#ifndef MERGESORT_H_
-#define MERGESORT_H_
+#include <cstring>  // For memcpy()
 
-void mergeSortInt(int intArray[], int arrayLen);
-
-template<class T>
-void mergeSort(T intArray[], int arrayLen)
+void mergeSortInt(int intArray[], int arrayLen)
 {
     if (arrayLen < 2) {
         return;
@@ -17,7 +13,7 @@ void mergeSort(T intArray[], int arrayLen)
     
     // And merge the two sorted halves
     // Copy our data to a temporary array. We will be putting the result into the original array.
-    T *intArrayCopy = new T[arrayLen];
+    int *intArrayCopy = new int[arrayLen];
     memcpy(intArrayCopy, intArray, arrayLen * sizeof(int));
     int firstHalfPos = 0, destPos = 0;
     int secondHalfPos = midIndex;
@@ -37,5 +33,3 @@ void mergeSort(T intArray[], int arrayLen)
     }
     delete[] intArrayCopy;
 }
-
-#endif /* MERGESORT_H_ */
