@@ -4,7 +4,7 @@
 
 # Compiler Flags
 # CXX      := -c++
-CXXFLAGS := -pedantic-errors -Wall -Wextra -Werror -O3
+CXXFLAGS := -pedantic-errors -Wall -Wextra -Werror -O3 -std=c++11
 LDFLAGS  := -L/usr/lib -lstdc++ -lm
 
 # Change TARGET to be what you want your executable file to be called
@@ -38,4 +38,4 @@ build:
 
 clean:
 	rm -rf build/*
-	find ../../ -name *.o -exec rm {} \;
+	rm $(OBJECTS)

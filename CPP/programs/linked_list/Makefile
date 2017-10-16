@@ -38,4 +38,4 @@ build:
 
 clean:
 	rm -rf build/*
-	find ../../ -name *.o -exec rm {} \;
+	rm $(OBJECTS)

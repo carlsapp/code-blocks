@@ -1,41 +1,41 @@
 #ifndef MERGESORT_H_
 #define MERGESORT_H_
 
-void mergeSortInt(int intArray[], int arrayLen);
+#include <cstring>  // For memcpy()
 
 template<class T>
-void mergeSort(T intArray[], int arrayLen)
+void mergeSort(T valueArray[], int arrayLen)
 {
     if (arrayLen < 2) {
         return;
     }
     int midIndex = arrayLen / 2;
     // Sort the first half
-    mergeSortInt(intArray, midIndex);
+    mergeSort(valueArray, midIndex);
     // Sort the second half
-    mergeSortInt(intArray + midIndex, arrayLen - midIndex);
+    mergeSort(valueArray + midIndex, arrayLen - midIndex);
     
     // And merge the two sorted halves
     // Copy our data to a temporary array. We will be putting the result into the original array.
-    T *intArrayCopy = new T[arrayLen];
-    memcpy(intArrayCopy, intArray, arrayLen * sizeof(int));
+    T *arrayCopy = new T[arrayLen];
+    memcpy(arrayCopy, valueArray, arrayLen * sizeof(int));
     int firstHalfPos = 0, destPos = 0;
     int secondHalfPos = midIndex;
     while (firstHalfPos < midIndex && secondHalfPos < arrayLen) {
-        if (intArrayCopy[firstHalfPos] <= intArrayCopy[secondHalfPos]) {
-            intArray[destPos++] = intArrayCopy[firstHalfPos++];
+        if (arrayCopy[firstHalfPos] <= arrayCopy[secondHalfPos]) {
+            valueArray[destPos++] = arrayCopy[firstHalfPos++];
         } else {
-            intArray[destPos++] = intArrayCopy[secondHalfPos++];
+            valueArray[destPos++] = arrayCopy[secondHalfPos++];
         }
     }
     // Copy anything still left
     while (firstHalfPos < midIndex) {
-        intArray[destPos++] = intArrayCopy[firstHalfPos++];
+        valueArray[destPos++] = arrayCopy[firstHalfPos++];
     }
     while (secondHalfPos < arrayLen) {
-        intArray[destPos++] = intArrayCopy[secondHalfPos++];
+        valueArray[destPos++] = arrayCopy[secondHalfPos++];
     }
-    delete[] intArrayCopy;
+    delete[] arrayCopy;
 }
 
 #endif /* MERGESORT_H_ */

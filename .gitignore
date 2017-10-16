@@ -1,0 +1,97 @@
+# This is a generic .gitignore file from 
+# https://github.com/carlsapp/repo-template/blob/master/.gitignore
+
+# Generic build directories
+env/
+build/
+lib/
+lib64/
+parts/
+sdist/
+var/
+dist/
+downloads/
+
+##########################
+# Language-Specific Files
+##########################
+
+# C and C++
+*.so
+*.o
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python        ####
+develop-eggs/  #
+eggs/          #
+.eggs/         # Distribution / packaging
+*.egg-info/    #
+.installed.cfg #
+*.egg          ####
+*.manifest # PyInstaller - Usually these files are written by a python script from a template
+*.spec     # before PyInstaller builds the exe, so as to inject date/other infos into it.
+pip-log.txt                   # Installer Logs
+pip-delete-this-directory.txt #
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# IPython Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# dotenv
+.env
+
+# virtualenv
+venv/
+ENV/
+
+# Spyder project settings
+.spyderproject
+
+# Rope project settings
+.ropeproject
+
+# Mac OS Files
+**/.DS_Store
+
+# Windows Files
+**/desktop.ini
